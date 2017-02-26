@@ -24,10 +24,14 @@
     currentWeather.tempMin     = [dict[@"main"][@"temp_min"] floatValue];
     currentWeather.tempMax     = [dict[@"main"][@"temp_max"] floatValue];
     
-    currentWeather.sunrise = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]];
-    currentWeather.sunset = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]];
+    currentWeather.sunrise = [currentWeather dateFormatterForSunriseAndSunset:
+                              [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]]];
+    
+    currentWeather.sunset = [currentWeather dateFormatterForSunriseAndSunset:
+                             [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]]];
+    
     currentWeather.date = [currentWeather dateFormatterForDate:
-                                 [NSDate dateWithTimeIntervalSince1970:[dict[@"dt"] integerValue]]];
+                           [NSDate dateWithTimeIntervalSince1970:[dict[@"dt"] integerValue]]];
     
     //    currentWeather.sunrise     = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]];
     //    currentWeather.sunset      = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]];
@@ -67,7 +71,7 @@
 }
 
 
-#pragma mark - Date Formatter Method
+#pragma mark - Date Formatters
 
 -(NSString *)dateFormatterForDate:(NSDate *)date {
 
@@ -79,6 +83,18 @@
     
     return newDate;
 }
+
+-(NSString *)dateFormatterForSunriseAndSunset:(NSDate *)date {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    NSString *newDate = [dateFormatter stringFromDate:date];
+    
+    return newDate;
+}
+
 
 #pragma mark - WindDirectionConverter
 

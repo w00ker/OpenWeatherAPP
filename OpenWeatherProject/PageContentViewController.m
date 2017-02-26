@@ -53,8 +53,8 @@
         weakSelf.windDirectionLabel.text = [NSString stringWithFormat:@"%@ %ld\u00B0", city.currentWeather.windDirection, (long)city.currentWeather.windDegrees];
         weakSelf.atmPressureLabel.text = [NSString stringWithFormat:@"%ldhPa", (long)city.currentWeather.atmPressure];
         weakSelf.cityLabel.text = [NSString stringWithFormat:@"%@", city.name ];
-        weakSelf.sunsetLabel.text = [NSString stringWithFormat:@"%ld", (long)city.currentWeather.sunset];
-        weakSelf.sunriseLabel.text = [NSString stringWithFormat:@"%ld", (long)city.currentWeather.sunrise];
+        weakSelf.sunsetLabel.text = [NSString stringWithFormat:@"%@", city.currentWeather.sunset];
+        weakSelf.sunriseLabel.text = [NSString stringWithFormat:@"%@", city.currentWeather.sunrise];
         weakSelf.city = city;
         
         //NSLog(@"error - %@", error);

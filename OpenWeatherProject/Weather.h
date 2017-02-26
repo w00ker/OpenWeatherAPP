@@ -21,8 +21,8 @@
 @property (strong, nonatomic) NSString *currentSkyDescription;
 @property (strong, nonatomic) NSString *forecastSkyDescription;
 @property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSDate *sunrise;
-@property (strong, nonatomic) NSDate *sunset;
+@property (strong, nonatomic) NSString *sunrise;
+@property (strong, nonatomic) NSString *sunset;
 
 +(Weather *)initCurrentWeatherWithDictionary:(NSDictionary *)dict;
 +(Weather *)initWeatherForecastWithDictionary:(NSDictionary *)dict;
