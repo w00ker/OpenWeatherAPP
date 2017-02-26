@@ -11,6 +11,7 @@
 		842DC1671E3BE5C50069D82D /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 842DC1661E3BE5C40069D82D /* City.m */; };
 		842DC16A1E3BEE5C0069D82D /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 842DC1691E3BEE5C0069D82D /* Weather.m */; };
 		843843D21E376CB100FD1869 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843843D11E376CB000FD1869 /* ServerManager.m */; };
+		843FD7671E62E3E1005C6929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843FD7651E62E3E1005C6929 /* Main.storyboard */; };
 		844B12511E62045D008C9561 /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B12501E62045D008C9561 /* CitiesTableViewController.m */; };
 		84E9A5C01E33767C007A0F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9A5BF1E33767C007A0F0A /* main.m */; };
 		84E9A5C31E33767D007A0F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9A5C21E33767D007A0F0A /* AppDelegate.m */; };
@@ -19,7 +20,6 @@
 		84E9A5CE1E33767D007A0F0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E9A5CD1E33767D007A0F0A /* Assets.xcassets */; };
 		84E9A5D11E33767D007A0F0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E9A5CF1E33767D007A0F0A /* LaunchScreen.storyboard */; };
 		84E9A5DA1E33883F007A0F0A /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9A5D91E33883F007A0F0A /* PageContentViewController.m */; };
-		84F45BC41E6219EB00EC6C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F45BC21E6219EB00EC6C2A /* Main.storyboard */; };
 		84FBE6D21E5266D1000161C7 /* ForecastCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBE6D11E5266D1000161C7 /* ForecastCollectionCell.m */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +32,7 @@
 		842DC1691E3BEE5C0069D82D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		843843D01E376CB000FD1869 /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerManager.h; sourceTree = "<group>"; };
 		843843D11E376CB000FD1869 /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerManager.m; sourceTree = "<group>"; };
+		843FD7661E62E3E1005C6929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		844B124F1E62045D008C9561 /* CitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesTableViewController.h; sourceTree = "<group>"; };
 		844B12501E62045D008C9561 /* CitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesTableViewController.m; sourceTree = "<group>"; };
 		84E9A5BB1E33767C007A0F0A /* OpenWeatherProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +47,6 @@
 		84E9A5D21E33767D007A0F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E9A5D81E33883F007A0F0A /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		84E9A5D91E33883F007A0F0A /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		84F45BC31E6219EB00EC6C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Копия OpenWeatherProject1/OpenWeatherProject/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		84FBE6D01E5266D1000161C7 /* ForecastCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastCollectionCell.h; sourceTree = "<group>"; };
 		84FBE6D11E5266D1000161C7 /* ForecastCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastCollectionCell.m; sourceTree = "<group>"; };
 		AF425EEE4AA04B4CC2A49341 /* Pods-OpenWeatherProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenWeatherProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenWeatherProject/Pods-OpenWeatherProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				84E9A5CD1E33767D007A0F0A /* Assets.xcassets */,
-				84F45BC21E6219EB00EC6C2A /* Main.storyboard */,
+				843FD7651E62E3E1005C6929 /* Main.storyboard */,
 				84E9A5CF1E33767D007A0F0A /* LaunchScreen.storyboard */,
 				84E9A5CA1E33767D007A0F0A /* OpenWeatherProject.xcdatamodeld */,
 			);
@@ -270,7 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F45BC41E6219EB00EC6C2A /* Main.storyboard in Resources */,
+				843FD7671E62E3E1005C6929 /* Main.storyboard in Resources */,
 				84E9A5D11E33767D007A0F0A /* LaunchScreen.storyboard in Resources */,
 				84E9A5CE1E33767D007A0F0A /* Assets.xcassets in Resources */,
 			);
@@ -347,20 +347,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		843FD7651E62E3E1005C6929 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843FD7661E62E3E1005C6929 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		84E9A5CF1E33767D007A0F0A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				84E9A5D01E33767D007A0F0A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		84F45BC21E6219EB00EC6C2A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84F45BC31E6219EB00EC6C2A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
