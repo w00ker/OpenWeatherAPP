@@ -11,7 +11,7 @@
 
 @implementation City
 
-+(City *)initWithDictionary:(NSDictionary *)dict {
++(City *)initWithCurrentDictionary:(NSDictionary *)dict {
     
     City *lCity = [City new];
     
@@ -25,16 +25,39 @@
     
         lCity.currentWeather = [Weather initCurrentWeatherWithDictionary:dict];
     
-    NSMutableArray *forecastWeather = [NSMutableArray array];
+//    NSMutableArray *forecastWeather = [[NSMutableArray alloc] init];
+//    
+//    NSLog(@"Whole weather = %@", dict);
+//    
+//    NSLog(@"Forecast weather arrray = %@", dict[@"list"]);
+//    
+//    for (NSDictionary *forecastDict in dict[@"list"]) {
+//        [forecastWeather addObject:[Weather initWeatherForecastWithDictionary:forecastDict]];
+//    }
+//    
+//    lCity.forecastWeatherArray = forecastWeather;
+//    
+//    NSLog(@"%@", lCity.forecastWeatherArray);
     
-    for (NSDictionary *forecastDict in dict[@"list"]) {
+    return lCity;
+}
+
++(City *)initWithForecastDictionary:(NSDictionary *)dict {
+    
+    City *lCity = [City new];
+    
+    NSMutableArray *forecastWeather = [[NSMutableArray alloc] init];
+    
+        for (NSDictionary *forecastDict in dict[@"list"]) {
         [forecastWeather addObject:[Weather initWeatherForecastWithDictionary:forecastDict]];
     }
     
     lCity.forecastWeatherArray = forecastWeather;
     
+    NSLog(@"%@", lCity.forecastWeatherArray);
+    
     return lCity;
+    
 }
-
 @end
 

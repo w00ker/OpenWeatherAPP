@@ -59,9 +59,9 @@
 
      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          
-         //NSLog(@"%@", responseObject);
+         NSLog(@"%@", responseObject);
 
-         City *lCity = [City initWithDictionary:responseObject];
+         City *lCity = [City initWithForecastDictionary:responseObject];
          
          completion(lCity, nil);
         
@@ -83,7 +83,7 @@
                          
                          NSLog(@"%@", responseObject);
                          
-                         City *lCity = [City initWithDictionary:responseObject];
+                         City *lCity = [City initWithCurrentDictionary:responseObject];
                          
                          completion(lCity, nil);
                          

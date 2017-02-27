@@ -21,25 +21,16 @@
     currentWeather.windDegrees = [dict[@"wind"][@"deg"]      integerValue];
     currentWeather.windDirection = [currentWeather windDirectionFromDegrees: [dict[@"wind"][@"deg"] integerValue]];
     currentWeather.atmPressure = [dict[@"main"][@"pressure"] integerValue];
-    currentWeather.tempMin     = [dict[@"main"][@"temp_min"] floatValue];
-    currentWeather.tempMax     = [dict[@"main"][@"temp_max"] floatValue];
+    currentWeather.tempMin     = [NSString stringWithFormat:@"%f", [dict[@"main"][@"temp_min"] floatValue]];
+    currentWeather.tempMax     = [dict[@"main"][@"temp_max"] stringValue];
     
-    currentWeather.sunrise = [currentWeather dateFormatterForSunriseAndSunset:
-                              [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]]];
+    currentWeather.sunrise = [currentWeather dateFormatterForDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]] withFormat:@"HH:mm"];
     
-    currentWeather.sunset = [currentWeather dateFormatterForSunriseAndSunset:
-                             [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]]];
+    currentWeather.sunset = [currentWeather dateFormatterForDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]] withFormat:@"HH:mm"];
     
-    currentWeather.date = [currentWeather dateFormatterForDate:
-                           [NSDate dateWithTimeIntervalSince1970:[dict[@"dt"] integerValue]]];
-    
-    //    currentWeather.sunrise     = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunrise"] integerValue]];
-    //    currentWeather.sunset      = [NSDate dateWithTimeIntervalSince1970:[dict[@"sys"][@"sunset"] integerValue]];
-    //    currentWeather.date        = [NSDate dateWithTimeIntervalSince1970:[dict[@"dt"] integerValue]];
-
+    currentWeather.date = [currentWeather dateFormatterForDate:[NSDate dateWithTimeIntervalSince1970:[dict[@"dt"] integerValue]] withFormat:@"dd.MM.yyyy"];
     
     for (NSDictionary *subWeather in dict[@"weather"]) {
-        
         currentWeather.currentSkyDescription = subWeather[@"main"];
     }
     
@@ -52,49 +43,31 @@
     
     Weather *weatherForecast = [Weather new];
     
-    weatherForecast.tempMin  = [dict[@"list"][@"temp"][@"min"] floatValue];
-    weatherForecast.tempMax  = [dict[@"list"][@"temp"][@"max"] floatValue];
+    weatherForecast.tempMin  = [NSString stringWithFormat:@"%.f", [dict[@"temp"][@"min"] floatValue]];
+    weatherForecast.tempMax  = [NSString stringWithFormat:@"%.f", [dict[@"temp"][@"max"] floatValue]];
 
     for (NSDictionary *subWeather in dict[@"weather"]) {
         weatherForecast.forecastSkyDescription = subWeather[@"main"];
         break;
+        
     }
-
-    /*
-     NSString *format = @"dd.MM.yyyy";
-     NSString *string = dict[@"dt_txt"];
-     
-     currentWeather.dateWithoutHours = [currentWeather stringWithFormat:format fromDateString:string];
-     */
     
     return weatherForecast;
 }
 
 
-#pragma mark - Date Formatters
+#pragma mark - DateFormatter
 
--(NSString *)dateFormatterForDate:(NSDate *)date {
+-(NSString *)dateFormatterForDate:(NSDate *)date withFormat:(NSString *)format{
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setDateFormat:@"dd.MM.yyyy"];
+    [dateFormatter setDateFormat:format];
     
     NSString *newDate = [dateFormatter stringFromDate:date];
     
     return newDate;
 }
-
--(NSString *)dateFormatterForSunriseAndSunset:(NSDate *)date {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    
-    NSString *newDate = [dateFormatter stringFromDate:date];
-    
-    return newDate;
-}
-
 
 #pragma mark - WindDirectionConverter
 

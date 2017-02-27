@@ -15,8 +15,8 @@
 @property (assign, nonatomic) NSInteger windSpeed;
 @property (assign, nonatomic) NSString *windDirection;
 @property (assign, nonatomic) NSInteger windDegrees;
-@property (assign, nonatomic) float     tempMin;
-@property (assign, nonatomic) float     tempMax;
+@property (assign, nonatomic) NSString *tempMin;
+@property (assign, nonatomic) NSString *tempMax;
 @property (assign, nonatomic) NSInteger atmPressure;
 @property (strong, nonatomic) NSString *currentSkyDescription;
 @property (strong, nonatomic) NSString *forecastSkyDescription;

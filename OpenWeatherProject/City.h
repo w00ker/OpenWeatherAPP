@@ -14,8 +14,9 @@
 @property (copy, nonatomic) NSString *name;
 @property (weak, nonatomic) Weather *currentWeather;
 @property (strong, nonatomic) NSArray *forecastWeatherArray;
-@property (strong, nonatomic) NSMutableArray *cityArray;
+//@property (weak, nonatomic) Weather *forecastWeather;
 
-+(City *)initWithDictionary:(NSDictionary *)dict;
++(City *)initWithCurrentDictionary:(NSDictionary *)dict;
++(City *)initWithForecastDictionary:(NSDictionary *)dict;
 
 @end

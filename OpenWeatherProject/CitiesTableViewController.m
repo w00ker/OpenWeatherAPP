@@ -7,6 +7,7 @@
 //
 
 #import "CitiesTableViewController.h"
+#import "ViewController.h"
 
 @interface CitiesTableViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIEdgeInsets inset = UIEdgeInsetsMake(20, 0, 0, 0);
+    
+    self.tableView.contentInset = inset;
+    self.tableView.scrollIndicatorInsets = inset;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,24 +38,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    ViewController *lVar = [ViewController new];
+    
+    return [lVar.cityNames count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    
+    return 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"" forIndexPath:indexPath];
+    
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

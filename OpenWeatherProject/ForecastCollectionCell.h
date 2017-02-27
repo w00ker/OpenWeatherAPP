@@ -10,4 +10,9 @@
 
 @interface ForecastCollectionCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *forecastWeatherImageView;
+@property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+
 @end
